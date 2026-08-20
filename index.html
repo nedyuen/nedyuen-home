@@ -7,7 +7,7 @@
   <title>Ned Yuen</title>
   <meta
     name="description"
-    content="The personal website of Ned Yuen."
+    content="Ned's Projects."
   />
 
   <meta property="og:title" content="Ned Yuen" />
@@ -87,13 +87,20 @@
       font-size: 14px;
     }
 
-    /* Hero */
+    /* Intro */
 
-    .hero {
+    .intro {
       min-height: 72vh;
       display: flex;
       align-items: center;
       padding: 80px 0 100px;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 100px;
+      align-items: center;
     }
 
     .hero-content {
@@ -126,108 +133,10 @@
       margin-top: 38px;
     }
 
-    /* Sites */
-
-    .sites {
-      padding: 40px 0 120px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 16px;
-      margin-bottom: 18px;
-    }
-
-    .section-title {
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .section-number {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .site-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .site-card {
-      min-height: 350px;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 2px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition:
-        transform 220ms ease,
-        background 220ms ease,
-        border-color 220ms ease;
-    }
-
-    .site-card:hover {
-      transform: translateY(-5px);
-      background: var(--card-hover);
-      border-color: #c9c8c1;
-    }
-
-    .site-number {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .site-content h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 34px;
-      font-weight: 500;
-      letter-spacing: -0.035em;
-      margin-bottom: 14px;
-    }
-
-    .site-content p {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.7;
-      max-width: 280px;
-    }
-
-    .site-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 14px;
-      font-weight: 600;
-      margin-top: 25px;
-    }
-
-    .arrow {
-      transition: transform 180ms ease;
-    }
-
-    .site-card:hover .arrow {
-      transform: translateX(5px);
-    }
-
     /* About */
 
-    .about {
-      border-top: 1px solid var(--line);
-      padding: 90px 0 120px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 80px;
+    .about-content {
+      max-width: 570px;
     }
 
     .about-label {
@@ -235,6 +144,7 @@
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
+      margin-bottom: 25px;
     }
 
     .about-text {
@@ -265,17 +175,36 @@
         width: min(calc(100% - 32px), var(--max-width));
       }
 
-      .hero {
+      .intro {
         min-height: auto;
         padding: 100px 0 90px;
       }
 
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        text-align: center;
+      }
+
+      .hero-content,
+      .about-content {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
       h1 {
         font-size: clamp(58px, 17vw, 100px);
+        margin-left: 0;
       }
 
       .hero-description {
+        margin-left: auto;
+        margin-right: auto;
         font-size: 18px;
+      }
+
+      .about-text {
+        font-size: 32px;
       }
 
       .site-grid {
@@ -284,15 +213,6 @@
 
       .site-card {
         min-height: 300px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-      }
-
-      .about-text {
-        font-size: 32px;
       }
     }
 
@@ -320,9 +240,10 @@
 
   <main>
 
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
+    <!-- Intro -->
+    <section class="intro">
+      <div class="container intro-grid">
+
         <div class="hero-content">
 
           <div class="eyebrow">
@@ -339,95 +260,8 @@
           </p>
 
         </div>
-      </div>
-    </section>
 
-    <!-- Sites -->
-    <section class="sites">
-      <div class="container">
-
-        <div class="section-header">
-          <span class="section-title">Explore</span>
-          <span class="section-number">03</span>
-        </div>
-
-        <div class="site-grid">
-
-          <!-- Hire Ned -->
-          <a
-            class="site-card"
-            href="https://hire.nedyuen.com"
-          >
-            <span class="site-number">01</span>
-
-            <div class="site-content">
-              <h2>Hire Ned</h2>
-
-              <p>
-                My professional experience, projects,
-                skills, and career journey.
-              </p>
-
-              <span class="site-link">
-                Visit site
-                <span class="arrow">→</span>
-              </span>
-            </div>
-          </a>
-
-          <!-- Interview Ned -->
-          <a
-            class="site-card"
-            href="https://interview.nedyuen.com"
-          >
-            <span class="site-number">02</span>
-
-            <div class="site-content">
-              <h2>Interview Ned</h2>
-
-              <p>
-                Have a conversation with an AI version
-                of my professional experience.
-              </p>
-
-              <span class="site-link">
-                Start conversation
-                <span class="arrow">→</span>
-              </span>
-            </div>
-          </a>
-
-          <!-- Piano Site -->
-          <a
-            class="site-card"
-            href="https://piano.nedyuen.com"
-          >
-            <span class="site-number">03</span>
-
-            <div class="site-content">
-              <h2>Piano Site</h2>
-
-              <p>
-                My musical life, performances, repertoire,
-                recordings, and experiences.
-              </p>
-
-              <span class="site-link">
-                Explore piano
-                <span class="arrow">→</span>
-              </span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="about">
-      <div class="container">
-
-        <div class="about-grid">
+        <div class="about-content">
 
           <div class="about-label">
             About
@@ -443,6 +277,9 @@
 
       </div>
     </section>
+
+
+
 
   </main>
 
